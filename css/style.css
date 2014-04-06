@@ -7,20 +7,20 @@
 }
 
 body {
-  background-color: #e1ddd9;
+  background-color: #4c5056;
   font-size: 12px;
   font-family: 'Source Sans Pro', 'Arial', 'Verdana', sans-serif;
-  color: #000;
+  color: #fff;
   text-align: center;
 }
 
 a {
- color: #d40000;
+ color: #e5a277;
  text-decoration: none;
 }
 
 a:hover {
-  color: #f82828;
+  color: #f9b082;
 }
 
 h2 {
@@ -30,17 +30,17 @@ h2 {
     1px -1px 0 #000,
     -1px 1px 0 #000,
      1px 1px 0 #000,
-     2px 2px 0 #000;
-  font-weight: 900;
-  text-transform: uppercase;
+     0px 3px 0 #000;
+  font-weight: 100;
   color: #fff;
 }
 
 select {
   float: left;
   display: block;
-  margin: 0 0 10px 73px;
+  margin: 0 0 10px 67px;
   width: 170px;
+  background-color: #9D9A90;
 }
 
 select:last-child {
@@ -52,19 +52,11 @@ select:last-child {
   padding: 7px;
   margin: 0 auto;
   text-align: left;
-  background: url("../images/bg.jpg") no-repeat;
-  background-size: 100%;
-  background-position: 0 100%;
-  background-color: #fff;
-  overflow: auto;
+  background: #696F77;
   margin-bottom: 10px;
-  border-top: 2px solid red;
-  border-bottom: 2px solid blue;
-  border-radius: 3px;
-  box-shadow: -1px -1px 0 #fff,
-              -1px 1px 0 #fff,
-              1px -1px 0 #fff,
-              1px 1px 0 #fff;
+  border: 1px solid #35373B;
+  border-left-width: 4px;
+  border-right-width: 4px;
 }
 
 #footer {
@@ -72,7 +64,7 @@ select:last-child {
   padding: 7px;
   margin: 0 auto;
   text-align: left;
-  background-color: #fff;
+  background: #696F77;
   overflow: auto;
   border-radius: 3px;
   font-size: 13px;
@@ -80,8 +72,6 @@ select:last-child {
 }
 
 #header {
-  font-weight: 900;
-  text-transform: uppercase;
   color: #fff;
   padding: 5px 0;
   text-shadow:
@@ -125,11 +115,12 @@ select:last-child {
 
 #alt {
   float: right;
-  background: url('../images/alt.gif') no-repeat;
-  width: 35px;
-  height: 31px;
+  background: url('../images/flags.gif') no-repeat;
+  background-position: 0 -11px;
+  width: 16px;
+  height: 11px;
   cursor: pointer;
-  margin: 20px 73px 0 0;
+  margin: 20px 67px 0 0;
 }
 
 #loading {
@@ -138,25 +129,27 @@ select:last-child {
 }
 
 #generate-button {
-  border-top: 2px solid red;
-  border-bottom: 2px solid blue;
-  border-radius: 3px;
-  border-left: 0;
-  border-right: 0;
-  background: #fff url('../images/star.gif') no-repeat;
-  background-position: 5px 56%;
-  font-family: 'Advance Wars';
-  font-size: 8px;
+  border: 0;
+  background: transparent;
+  text-shadow:
+   -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000,
+     0px 2px 0 #000;
+  font-family: 'Source Sans Pro';
+  font-size: 13px;
+  color: #fff;
+  background: url('../images/star.gif') no-repeat;
+  background-position: 5px 50%;
+  padding-left: 15px;
   cursor: pointer;
   display: block;
-  margin: 0 auto;
-  margin-top: 10px;
-  line-height: 20px;
-  padding-left: 16px;
+  margin: 10px auto 0 auto;
 }
 
 #quote-box {
-  height: 75px;
+  height: 90px;
 }
 
 #quote-preview {
@@ -167,36 +160,45 @@ select:last-child {
   height: 48px;
   width: 48px;
   position: absolute;
+  left: 8px;
+  top: 2px;
+}
+
+#quote-preview #portrait-name {
+  position: absolute;
+  top: 44px;
   left: 0;
+  z-index: 999;
 }
 
 #quote-preview #quote-text {
   position: absolute;
-  left: 50px;
+  left: 62px;
   top: 5px;
-  width: 185px;
+  width: 182px;
   height: 32px;
   border: 0;
   background: transparent;
   font-family: 'Advance Wars';
   font-size: 8px;
   line-height: 16px;
+  color: #fff;
 }
 
 #quote-preview #background {
-  width: 240px;
-  height: 48px;
+  width: 256px;
+  height: 52px;
   position: relative;
   margin: 0 auto;
 }
 
 #finished {
-  width: 240px;
+  width: 256px;
   margin: 0 auto;
 }
 
 #finished-url {
-  width: 230px;
+  width: 246px;
   border: 0;
   font-family: 'Source Sans Pro';
   margin: 0 auto;

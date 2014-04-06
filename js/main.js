@@ -1,5 +1,4 @@
-var co = "andy";
-var backdrop = "standard";
+var co = "will";
 var mood = 'normal';
 var alt = false;
 var clientId = '46083a920d1f30a';
@@ -63,10 +62,10 @@ var clientId = '46083a920d1f30a';
 			alt = !alt;
 			$('#alt-value').val(alt);
 			if(alt) {
-				$(this).css('background-position', '0 -36px');
+				$(this).css('background-position', '0 0');
 			}
 			else {
-				$(this).css('background-position', '0 0');
+				$(this).css('background-position', '0 -11px');
 			}
 			updateQuote();
 		});
@@ -76,12 +75,12 @@ var clientId = '46083a920d1f30a';
 		});
 
 		function updateQuote() {
-			$('#background').css('background-image', 'url(images/backdrop/' + backdrop + '.gif)');
+			$('#portrait').css('background-image', 'url(images/co/' + co + '-left.gif)');
 			if(alt) {
-				$('#portrait').css('background-image', 'url(images/co/' + co + '-alt.gif)');
+				$('#portrait-name').html($('<img>').attr('src', 'images/co/name/' + co + '_eu.gif'));
 			}
 			else {
-				$('#portrait').css('background-image', 'url(images/co/' + co + '.gif)');
+				$('#portrait-name').html($('<img>').attr('src', 'images/co/name/' + co + '.gif'));
 			}
 
 			switch(mood) {

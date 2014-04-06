@@ -1,10 +1,13 @@
 <?php
 
 $chosen_co = $_GET['co'];
-$backdrop_plain = $_GET['backdrop'];
 $expr = $_GET['expr'];
 $text = $_GET['text'];
-$alt = $_GET['alt'];
+$flag_alt = $_GET['alt'];
+$time = time();
+
+if ($flag_alt == "")
+	$flag_alt = 0;
 
 switch ($expr)
 {
@@ -22,19 +25,18 @@ switch ($expr)
 		break;
 }
 
-if($alt == "true") {
-	$gif = realpath('images/co/' . $chosen_co . '-alt.gif');
-} else {
-	$gif = realpath('images/co/' . $chosen_co . '.gif');
-}
+$image = imagecreatefrompng("images/backdrop/backdrop.png");
+$co = imagecreatefromgif("images/co/" . $chosen_co . "-left.gif");
 
-$image = imagecreatetruecolor(240, 48);
-$bd = imagecreatefromgif("images/backdrop/" . $backdrop_plain . ".gif");
-imagecopy($image, $bd, 0, 0 , 0, 0, 240, 48);
-$co = imagecreatefromgif($gif);
-imagecopy($image, $co, 0, 0, $offset, 0, 48, 48);
+if ($flag_alt == "false")
+	$name = imagecreatefromgif("images/co/name/" . $chosen_co . ".gif");
+else
+	$name = imagecreatefromgif("images/co/name/" . $chosen_co . "_eu.gif");
 
-$black = imagecolorallocate($image, 0, 0, 0);
+imagecopymerge($image, $co, 8, 2, $offset, 0, 48, 48, 100);
+imagecopymerge($image, $name, 0, 44, 0, 0, 60, 15, 100);
+
+$white = imagecolorallocate($image, 255, 255, 255);
 
 $fontpath = realpath('fonts/');
 putenv('GDFONTPATH='.$fontpath);
@@ -61,8 +63,8 @@ else { // Otherwise, break em up with wordwrap()
 		$line2 = $newLines[1];
 }
 
-imagettftext($image, 6,0,52,20,$black,$font,$line1);
-imagettftext($image, 6,0,52,37,$black,$font,$line2);
+Imagettftext($image, 6,0,64,24,$white,$font,$line1);
+Imagettftext($image, 6,0,64,40,$white,$font,$line2);
 
 // Capture the image data from imagegif() and then convert to to base64 for uploading to imgur
 ob_start();
